@@ -38,6 +38,7 @@ This is a learning project where I explore various aspects of game development, 
 - ✅ Health and Mana management systems
 - ✅ Custom editor tools for game design
 - ✅ Death animation and state handling
+- ✅ Game manager for centralized game state control
 - 🚧 Combat system (In Development)
 - 🚧 Inventory system (Planned)
 - 🚧 Quest system (Planned)
@@ -61,6 +62,7 @@ Abyss of Eldrathar/
 │   ├── Scripts/         # C# game scripts
 │   │   ├── Player/      # Player-related scripts
 │   │   │   └── Editor/  # Custom editor tools
+│   │   ├── Managers/    # Game managers (GameManager, etc.)
 │   │   └── Extra/       # Interfaces and utilities
 │   ├── ScriptableObjects/ # Game data assets
 │   ├── Sprites/         # Pixel art sprites
@@ -96,6 +98,7 @@ This project is in **active development** and serves as a learning platform. I'm
 - [x] Mana/Energy system
 - [x] Custom editor tools
 - [x] Death animation and handling
+- [x] Game manager architecture
 - [ ] Combat mechanics
 - [ ] Enemy AI
 - [ ] Level design
@@ -146,6 +149,7 @@ Este é um projeto de aprendizado onde exploro diversos aspectos do desenvolvime
 - ✅ Sistemas de gerenciamento de Vida e Mana
 - ✅ Ferramentas customizadas de editor para game design
 - ✅ Animação e tratamento de estado de morte
+- ✅ Game manager para controle centralizado do estado do jogo
 - 🚧 Sistema de combate (Em Desenvolvimento)
 - 🚧 Sistema de inventário (Planejado)
 - 🚧 Sistema de missões (Planejado)
@@ -169,6 +173,7 @@ Abyss of Eldrathar/
 │   ├── Scripts/         # Scripts C# do jogo
 │   │   ├── Player/      # Scripts relacionados ao jogador
 │   │   │   └── Editor/  # Ferramentas customizadas de editor
+│   │   ├── Managers/    # Gerenciadores do jogo (GameManager, etc.)
 │   │   └── Extra/       # Interfaces e utilitários
 │   ├── ScriptableObjects/ # Assets de dados do jogo
 │   ├── Sprites/         # Sprites em pixel art
@@ -204,6 +209,7 @@ Este projeto está em **desenvolvimento ativo** e serve como plataforma de apren
 - [x] Sistema de Mana/Energia
 - [x] Ferramentas customizadas de editor
 - [x] Animação e tratamento de morte
+- [x] Arquitetura de game manager
 - [ ] Mecânicas de combate
 - [ ] IA de inimigos
 - [ ] Design de níveis

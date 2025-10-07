@@ -9,13 +9,15 @@ public class Player : MonoBehaviour
 
   private PlayerAnimations playerAnimations;
 
+  public void ResetPlayer()
+  {
+    playerStats.ResetStats();
+    playerAnimations.SetReviveAnimation();
+  }
+
   private void Awake()
   {
     playerAnimations = GetComponent<PlayerAnimations>();
-    
-    if (playerStats.Health <= 0)
-    {
-      playerAnimations.SetDeadAnimation();
-    }
+    playerAnimations.SetReviveAnimation();
   }
 }
