@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
+  [Header("Config")]
   [SerializeField] private PlayerStats playerStats;
+  
+  private PlayerAnimations playerAnimations;
+
+  private void Awake()
+  {
+    playerAnimations = GetComponent<PlayerAnimations>();
+  }
 
   private void Update()
   {
@@ -15,7 +23,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
   public void TakeDamage(float amount)
   {
     playerStats.Health -= amount;
-    if (playerStats.Health <= 0)
+    if (playerStats.Health <= 0f)
     {
       PlayerDead();
     }
@@ -23,6 +31,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
   private void PlayerDead()
   {
-    Debug.Log("Player Died");
+    playerAnimations.SetDeadAnimation();
   }
 }

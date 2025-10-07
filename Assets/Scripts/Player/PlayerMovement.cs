@@ -2,60 +2,59 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement Settings")]
-    [SerializeField] private float speed = 5f;
+  [Header("Movement Settings")]
+  [SerializeField] private float speed = 5f;
 
-    private PlayerActions actions;
-    private Rigidbody2D rb2D;
-    private Animator animator;
-    private Vector2 moveDirection;
+  private Player player;
+  private PlayerActions actions;
+  private PlayerAnimations playerAnimations;
+  private Rigidbody2D rb2D;
+  private Vector2 moveDirection;
 
-    private readonly int moveX = Animator.StringToHash("MoveX");
-    private readonly int moveY = Animator.StringToHash("MoveY");
-    private readonly int moving = Animator.StringToHash("Moving");
+  private void Awake()
+  {
+    player = GetComponent<Player>();
+    actions = new PlayerActions();
+    playerAnimations = GetComponent<PlayerAnimations>();
+    rb2D = GetComponent<Rigidbody2D>();
+  }
 
-    private void Awake()
+  void Update()
+  {
+    ReadMovement();
+  }
+
+  private void FixedUpdate()
+  {
+    Move();
+  }
+
+  private void Move()
+  {
+    if (player.PlayerStats.Health <= 0f) return;
+    rb2D.MovePosition(rb2D.position + moveDirection * (speed * Time.fixedDeltaTime));
+  }
+
+  private void ReadMovement()
+  {
+    moveDirection = actions.Movement.Move.ReadValue<Vector2>().normalized;
+    if (moveDirection == Vector2.zero)
     {
-        actions = new PlayerActions();
-        animator = GetComponent<Animator>();
-        rb2D = GetComponent<Rigidbody2D>();
+      playerAnimations.SetMoveBoolTransition(false);
+      return;
     }
 
-    void Update()
-    {
-        ReadMovement();
-    }
+    playerAnimations.SetMoveBoolTransition(true);
+    playerAnimations.SetMoveAnimation(moveDirection);
+  }
 
-    private void FixedUpdate()
-    {
-        Move();
-    }
+  private void OnEnable()
+  {
+    actions.Enable();
+  }
 
-    private void Move()
-    {
-        rb2D.MovePosition(rb2D.position + moveDirection * (speed * Time.fixedDeltaTime));
-    }
-
-    private void ReadMovement()
-    {
-        moveDirection = actions.Movement.Move.ReadValue<Vector2>().normalized;
-        if (moveDirection == Vector2.zero)
-        {
-            animator.SetBool(moving, false);
-            return;
-        }
-        animator.SetBool(moving, true);
-        animator.SetFloat(moveX, moveDirection.x);
-        animator.SetFloat(moveY, moveDirection.y);
-    }
-
-    private void OnEnable()
-    {
-        actions.Enable();
-    }
-
-    private void OnDisable()
-    {
-        actions.Disable();
-    }
+  private void OnDisable()
+  {
+    actions.Disable();
+  }
 }
