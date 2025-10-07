@@ -32,8 +32,12 @@ This is a learning project where I explore various aspects of game development, 
 
 ### ✨ Features
 
-- ✅ 2D character movement with animations
-- ✅ Directional animations (Idle states for all directions)
+- ✅ 2D character movement with 8-directional animations
+- ✅ Directional animations (Idle and Walk for all directions)
+- ✅ Player stats system with ScriptableObjects
+- ✅ Health and Mana management systems
+- ✅ Custom editor tools for game design
+- ✅ Death animation and state handling
 - 🚧 Combat system (In Development)
 - 🚧 Inventory system (Planned)
 - 🚧 Quest system (Planned)
@@ -55,7 +59,10 @@ Abyss of Eldrathar/
 │   ├── Animations/      # Character and object animations
 │   ├── Scenes/          # Game scenes
 │   ├── Scripts/         # C# game scripts
-│   │   └── Player/      # Player-related scripts
+│   │   ├── Player/      # Player-related scripts
+│   │   │   └── Editor/  # Custom editor tools
+│   │   └── Extra/       # Interfaces and utilities
+│   ├── ScriptableObjects/ # Game data assets
 │   ├── Sprites/         # Pixel art sprites
 │   └── Settings/        # Rendering and input settings
 ├── ProjectSettings/     # Unity project configuration
@@ -83,8 +90,12 @@ Abyss of Eldrathar/
 This project is in **active development** and serves as a learning platform. I'm currently working on:
 
 - [x] Basic character movement system
-- [x] Character animations (Idle states)
-- [ ] Character movement animations (Walk/Run)
+- [x] Character animations (Idle and Walk states)
+- [x] Player stats system with ScriptableObjects
+- [x] Health system
+- [x] Mana/Energy system
+- [x] Custom editor tools
+- [x] Death animation and handling
 - [ ] Combat mechanics
 - [ ] Enemy AI
 - [ ] Level design
@@ -129,8 +140,12 @@ Este é um projeto de aprendizado onde exploro diversos aspectos do desenvolvime
 
 ### ✨ Funcionalidades
 
-- ✅ Movimentação 2D do personagem com animações
-- ✅ Animações direcionais (Estados Idle para todas as direções)
+- ✅ Movimentação 2D do personagem com animações de 8 direções
+- ✅ Animações direcionais (Idle e Walk para todas as direções)
+- ✅ Sistema de stats do jogador com ScriptableObjects
+- ✅ Sistemas de gerenciamento de Vida e Mana
+- ✅ Ferramentas customizadas de editor para game design
+- ✅ Animação e tratamento de estado de morte
 - 🚧 Sistema de combate (Em Desenvolvimento)
 - 🚧 Sistema de inventário (Planejado)
 - 🚧 Sistema de missões (Planejado)
@@ -152,7 +167,10 @@ Abyss of Eldrathar/
 │   ├── Animations/      # Animações de personagens e objetos
 │   ├── Scenes/          # Cenas do jogo
 │   ├── Scripts/         # Scripts C# do jogo
-│   │   └── Player/      # Scripts relacionados ao jogador
+│   │   ├── Player/      # Scripts relacionados ao jogador
+│   │   │   └── Editor/  # Ferramentas customizadas de editor
+│   │   └── Extra/       # Interfaces e utilitários
+│   ├── ScriptableObjects/ # Assets de dados do jogo
 │   ├── Sprites/         # Sprites em pixel art
 │   └── Settings/        # Configurações de renderização e input
 ├── ProjectSettings/     # Configurações do projeto Unity
@@ -180,8 +198,12 @@ Abyss of Eldrathar/
 Este projeto está em **desenvolvimento ativo** e serve como plataforma de aprendizado. Atualmente estou trabalhando em:
 
 - [x] Sistema básico de movimentação do personagem
-- [x] Animações do personagem (Estados Idle)
-- [ ] Animações de movimentação (Andar/Correr)
+- [x] Animações do personagem (Estados Idle e Walk)
+- [x] Sistema de stats do jogador com ScriptableObjects
+- [x] Sistema de vida
+- [x] Sistema de Mana/Energia
+- [x] Ferramentas customizadas de editor
+- [x] Animação e tratamento de morte
 - [ ] Mecânicas de combate
 - [ ] IA de inimigos
 - [ ] Design de níveis

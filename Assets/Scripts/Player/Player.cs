@@ -7,8 +7,15 @@ public class Player : MonoBehaviour
 
   public PlayerStats PlayerStats => playerStats;
 
+  private PlayerAnimations playerAnimations;
+
   private void Awake()
   {
-
+    playerAnimations = GetComponent<PlayerAnimations>();
+    
+    if (playerStats.Health <= 0)
+    {
+      playerAnimations.SetDeadAnimation();
+    }
   }
 }
